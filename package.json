@@ -34,7 +34,7 @@
     "bootstrap-icons": "^1.13.1",
     "highcharts": "^12.5.0",
     "highcharts-angular": "^5.4.0",
-    "jspdf": "^4.1.0",
+    "jspdf": "^3.0.4",
     "jspdf-autotable": "^5.0.7",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
