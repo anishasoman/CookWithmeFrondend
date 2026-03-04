@@ -1,0 +1,14 @@
+.not-found-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5e6, #fff);
+}
+
+.not-found-img {
+  max-height: 260px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  letter-spacing: 4px;
+}

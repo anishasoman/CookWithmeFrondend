@@ -1,0 +1,186 @@
+
+.page-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+app-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.content-area {
+  flex: 1;
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+
+.container {
+  background: #f5f6fa;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.add-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #1b5e20;
+}
+
+.top-bar input {
+  padding: 10px;
+  width: 280px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+
+.table-wrapper {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #eee;
+  font-weight: 600;
+}
+
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+tr:hover {
+  background: #fafafa;
+}
+
+/* Images */
+img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.edit {
+  color: #1976d2;
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.delete {
+  color: #d32f2f;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+.pagination-wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
+/* Tablet */
+@media (max-width: 992px) {
+
+  app-sidebar {
+    width: 220px;
+  }
+
+  .content-area {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .page-layout {
+    flex-direction: column;
+  }
+
+  app-sidebar {
+    width: 100%;
+  }
+
+  .content-area {
+    padding: 15px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-bar input {
+    width: 100%;
+  }
+
+  img {
+    width: 55px;
+    height: 55px;
+  }
+
+  table {
+    min-width: 500px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .table-wrapper {
+    padding: 15px;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,66 @@
+/* HERO */
+.contact-hero {
+  background: #ffc107;
+  padding: 80px 20px;
+  margin: 30px 20px;
+  border-radius: 18px;
+  color: #fff;
+}
+
+.contact-hero h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.contact-hero p {
+  max-width: 600px;
+  margin: 15px auto 0;
+  opacity: 0.95;
+}
+
+/* MAIN SECTION */
+.contact-section {
+  padding: 70px 0;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.contact-card h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* INFO */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.contact-info i {
+  font-size: 1.1rem;
+  margin-right: 12px;
+  color: #ffc107;
+}
+
+/* FORM */
+.form-control {
+  border-radius: 8px;
+  padding: 12px;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.btn-success {
+  border-radius: 8px;
+  padding: 10px 28px;
+}

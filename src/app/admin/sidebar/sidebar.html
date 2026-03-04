@@ -1,0 +1,50 @@
+<div class="admin-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="admin-profile">
+      <div class="avatar">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <h4>Admin Panel</h4>
+      <p>CookWithMe</p>
+    </div>
+
+    <ul class="menu">
+      <li routerLink="/admin"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+      </li>
+
+      <li routerLink="/admin/recipelist" routerLinkActive="active">
+        <i class="bi bi-journal-text"></i>
+        <span>Recipes</span>
+      </li>
+
+      <li routerLink="/admin/userlist" routerLinkActive="active">
+        <i class="bi bi-people-fill"></i>
+        <span>Users</span>
+      </li>
+
+      <li routerLink="/admin/downloadlist" routerLinkActive="active">
+        <i class="bi bi-download"></i>
+        <span>Downloads</span>
+      </li>
+
+      <li routerLink="/admin/requestlist" routerLinkActive="active">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Requests</span>
+      </li>
+    </ul>
+
+  </aside>
+
+  <!-- Content -->
+  <main >
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <div class="icon-wrapper d-flex align-items-center justify-content-center">
+    <i class="bi bi-bookmark-heart-fill fs-1"></i>
+  </div>
+  <h2 class="text-center mb-5 collection-title">Your Collections</h2>
+
+  <div class="row g-4 justify-content-center">
+    @if (savedRecipes.length > 0) {
+      @for (recipe of savedRecipes; track recipe._id) {
+        <div class="col-md-4 col-lg-3">
+          <div class="collection-card">
+            <div class="image-wrapper">
+              <img [src]="recipe.image" alt="recipe" />
+            </div>
+
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <h6 class="mb-0">
+                {{ recipe.name }}
+              </h6>
+              <span class="delete-btn" (click)="deleteRecipe(recipe._id)">
+                <i class="bi bi-trash-fill"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      }
+    } @else {
+      <div class="text-center mt-5">
+        <h5>No saved recipes yet</h5>
+      </div>
+    }
+  </div>
+</div>

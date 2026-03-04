@@ -1,0 +1,50 @@
+.auth-wrapper {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.auth-card .form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.auth-card .form-control::placeholder {
+  color: #ddd;
+}
+
+.auth-card .form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.auth-link {
+  color: #8ef7a2;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}

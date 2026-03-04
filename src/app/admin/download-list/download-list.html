@@ -1,0 +1,48 @@
+<div class="row m-4 main-layout">
+
+  <div class="col-lg-2 col-md-3 col-12 sidebar-col">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-lg-10 col-md-9 col-12 content-col">
+
+    <div class="download-container">
+      <h2 class="page-title">Downloaded Recipe List</h2>
+
+      <div class="table-card">
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Recipe ID</th>
+                <th>Recipe Name</th>
+                <th>Cuisine</th>
+                <th>Downloads</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (item of downloads; track $index) {
+                <tr>
+                  <td>{{ $index + 1 }}</td>
+                  <td>{{ item.id }}</td>
+                  <td class="recipe-name">{{ item.name }}</td>
+                  <td>{{ item.cuisine }}</td>
+                  <td>
+                    <span class="download-badge">
+                      {{ item.count }}
+                    </span>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

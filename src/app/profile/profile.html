@@ -1,0 +1,114 @@
+<div class="container my-5">
+
+  <div class="row g-5">
+
+    <!-- Update Profile Section -->
+    <div class="col-lg-6">
+      <div class="profile-box p-5 text-center">
+
+        <h2 class="mb-4 fw-bold">Update Profile</h2>
+
+<!-- Avatar -->
+<div class="text-center mb-3">
+<img 
+  [src]="profilePic 
+    ? 'http://localhost:3000/uploads/' + profilePic 
+    : 'https://cdn-icons-png.flaticon.com/512/149/149071.png'"
+  class="profile-img"
+/>
+</div>
+
+
+
+<!-- File Upload -->
+<input
+  type="file"
+  class="form-control mb-3"
+  accept="image/*"
+  (change)="onFileSelected($event)"
+/>
+
+
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="Enter Name"
+          [(ngModel)]="username"
+        />
+
+        <input
+          type="email"
+          class="form-control mb-4"
+          placeholder="Enter Email"
+          [(ngModel)]="email"
+        />
+
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-success px-4" (click)="updateProfile()">
+            Update Profile
+          </button>
+
+          <button class="btn btn-outline-secondary px-4">
+            Cancel
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Downloaded Recipe Section -->
+<div class="col-lg-6">
+  <div class="profile-box p-5">
+
+    <h2 class="mb-4 text-center fw-bold">
+      Downloaded Recipe List
+    </h2>
+
+    @if (downloadedRecipes.length === 0) {
+      <p class="text-center text-muted">No downloads yet.</p>
+    }
+
+    <div class="row g-4">
+
+      @for (recipe of downloadedRecipes; track recipe._id) {
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+
+            <img 
+              [src]="recipe.image" 
+              class="card-img-top"
+              style="height:180px; object-fit:cover;"
+            />
+
+            <div class="card-body text-center">
+
+              <h5 class="card-title">
+                {{ recipe.name }}
+              </h5>
+
+              <p class="card-text text-muted">
+                {{ recipe.cuisine }}
+              </p>
+
+              <button 
+                class="btn btn-danger btn-sm"
+                (click)="deleteRecipe(recipe)">
+                Delete
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+</div>

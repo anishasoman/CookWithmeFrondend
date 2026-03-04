@@ -1,0 +1,166 @@
+<div class="add-recipe-container">
+  <h2 class="page-title">Edit Recipe Details</h2>
+
+  <div class="form-card">
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- Recipe Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.name"
+                 name="name"
+                 type="text"
+                 placeholder=" "
+                 required>
+          <label>Recipe Name</label>
+        </div>
+      </div>
+
+      <!-- Time -->
+      <div class="form-row">
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.prepTimeMinutes"
+                 name="prepTime"
+                 type="number"
+                 placeholder=" ">
+          <label>Preparation Time (min)</label>
+        </div>
+
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.cookTimeMinutes"
+                 name="cookTime"
+                 type="number"
+                 placeholder=" ">
+          <label>Cooking Time (min)</label>
+        </div>
+      </div>
+
+      <!-- Servings -->
+      <div class="form-row">
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.servings"
+                 name="servings"
+                 type="number"
+                 placeholder=" ">
+          <label>Servings</label>
+        </div>
+
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.caloriesPerServing"
+                 name="calories"
+                 type="number"
+                 placeholder=" ">
+          <label>Calories Per Serving</label>
+        </div>
+      </div>
+
+      <!-- Cuisine & Difficulty -->
+      <div class="form-row">
+        <div class="form-group">
+          <select [(ngModel)]="recipeDetails.cuisine"
+                  name="cuisine"
+                  required>
+            <option value="" disabled selected></option>
+            @for (item of cuisinetype; track item) {
+              <option [value]="item">{{ item }}</option>
+            }
+          </select>
+          <label>Cuisine</label>
+        </div>
+
+        <div class="form-group">
+          <select [(ngModel)]="recipeDetails.difficulty"
+                  name="difficulty"
+                  required>
+            <option value="" disabled selected></option>
+            @for (level of ['Easy','Medium','Hard']; track level) {
+              <option [value]="level">{{ level }}</option>
+            }
+          </select>
+          <label>Difficulty</label>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="form-row">
+        <div class="form-group">
+          <input [(ngModel)]="recipeDetails.image"
+                 name="image"
+                 type="text"
+                 placeholder=" ">
+          <label>Image URL</label>
+        </div>
+      </div>
+
+      <!-- Ingredients -->
+      <div class="section-box">
+        <h4>Ingredients</h4>
+
+        <div class="add-row">
+          <input [(ngModel)]="ingredientInput"
+                 name="ingredientInput"
+                 placeholder="Enter Ingredient">
+          <button type="button" (click)="addIngredient()">Add</button>
+        </div>
+
+        @if (recipeDetails.ingredients?.length) {
+          <ul>
+            @for (item of recipeDetails.ingredients; track $index) {
+              <li>
+                {{ item }}
+                <button type="button" (click)="removeIngredient($index)">✕</button>
+              </li>
+            }
+          </ul>
+        }
+      </div>
+
+      <!-- Instructions -->
+      <div class="section-box">
+        <h4>Instructions</h4>
+
+        <div class="add-row">
+          <input [(ngModel)]="instructionInput"
+                 name="instructionInput"
+                 placeholder="Enter Instruction">
+          <button type="button" (click)="addInstruction()">Add</button>
+        </div>
+
+        @if (recipeDetails.instructions?.length) {
+          <ul>
+            @for (step of recipeDetails.instructions; track $index) {
+              <li>
+                {{ step }}
+                <button type="button" (click)="removeInstruction($index)">✕</button>
+              </li>
+            }
+          </ul>
+        }
+      </div>
+
+      <!-- Meal Type -->
+      <div class="meal-type-box">
+        <h4>Choose Meal Type</h4>
+
+        <div class="checkbox-group">
+          @for (type of updatedMealArray; track type) {
+            <label class="chip">
+              <input type="checkbox"
+                     [checked]="recipeDetails.mealType?.includes(type)"
+                     (change)="onMealTypeChange($event, type)">
+              <span>{{ type }}</span>
+            </label>
+          }
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-section">
+        <button type="submit" class="submit-btn">
+          Update Recipe
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+
+.calendar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.calendar-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  background: white;
+  box-sizing: border-box;
+}
+
+.calendar-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+
+
+/* Make calendar responsive */
+mat-calendar {
+  width: 100% !important;
+}
+
+/* Prevent overflow inside grid layout */
+::ng-deep .mat-calendar {
+  width: 100% !important;
+}
+
+
+.selected-date {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+
+/* Large tablets */
+@media (max-width: 992px) {
+  .calendar-wrapper {
+    padding: 15px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .calendar-card {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .calendar-wrapper {
+    padding: 10px;
+  }
+
+  .calendar-card {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .calendar-title {
+    font-size: 1rem;
+  }
+
+  .selected-date {
+    font-size: 0.85rem;
+  }
+}
+@media (min-width: 1200px) {
+  .calendar-card {
+    max-width: 360px;
+  }
+}

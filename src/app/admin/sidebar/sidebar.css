@@ -1,0 +1,140 @@
+
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #eef1f5);
+  border-radius: 18px;
+}
+
+/* sidebar */
+
+.sidebar {
+  width: 260px;
+  padding: 30px 20px;
+  background: linear-gradient(180deg, #ffb347, #ffcc33);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+}
+
+/* Profile */
+
+.admin-profile {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ff9800;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.admin-profile h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.admin-profile p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== MENU ===== */
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+}
+
+/* Active style */
+
+.menu li.active {
+  background: white;
+  color: #ff9800;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Active left indicator */
+
+.menu li.active::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 60%;
+  background: #ff9800;
+  border-radius: 10px;
+}
+
+/* contents */
+
+.content {
+  flex: 1;
+  padding: 40px;
+
+}
+
+/* Glass card effect for inner pages */
+.content > * {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/*responsive*/
+
+@media (max-width: 768px) {
+
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}

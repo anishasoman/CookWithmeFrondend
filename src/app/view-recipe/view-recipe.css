@@ -1,0 +1,172 @@
+/* Image */
+.image-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.recipe-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Title */
+.recipe-title {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* Rating */
+.rating {
+  font-size: 16px;
+  color: #ff9800;
+  font-weight: 500;
+}
+
+/* Meta grid */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.meta-card {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.meta-card strong {
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #ff7043;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Sections */
+.section-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Ingredients */
+.ingredients-list {
+  padding-left: 18px;
+}
+
+/* Instructions */
+.instruction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.instruction-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+
+.step-number {
+  background: #ff7043;
+  color: white;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* Back Button */
+.back-btn {
+  background: #ff7043;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 15px;
+}
+
+.back-btn:hover {
+  background: #e64a19;
+  color: white;
+}
+.related-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
+  background: white;
+}
+
+.related-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.related-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.action-buttons .btn {
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.download-btn {
+  background: #1e7e34;
+  border: none;
+}
+
+.download-btn:hover {
+  background: #155d27;
+}
+
+.save-btn {
+  background: #2563eb;
+  border: none;
+}
+
+.save-btn:hover {
+  background: #1d4ed8;
+}
+/* Quick Tags */
+.quick-tags .badge {
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.quick-tags .bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.quick-tags .bg-light {
+  background-color: #f1f3f5 !important;
+}

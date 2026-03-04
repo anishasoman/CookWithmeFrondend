@@ -1,0 +1,174 @@
+@if (recipe) {
+
+<div class="container my-5">
+
+  <!-- Back button -->
+  <a routerLink="/allrecipes" class="btn back-btn mb-4">
+    ← Back to Recipes
+  </a>
+
+  <div class="row g-5 align-items-start">
+
+<!-- Image Section -->
+<div class="col-lg-6">
+  <div class="image-card">
+    <img
+      [src]="recipe.image"
+      alt="recipe"
+      class="recipe-img"
+    />
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons mt-4 d-flex gap-3">
+    <button (click)="addDownload()" class="btn btn-success flex-fill download-btn">
+      ⬇ Download
+    </button>
+
+<button 
+  class="btn flex-fill"
+  [ngClass]="isSaved ? 'btn-danger' : 'btn-primary'"
+  (click)="toggleSave()">
+
+  {{ isSaved ? '❤️ Saved' : '🤍 Save' }}
+
+</button>
+  </div>
+<!-- Quick Tags -->
+<div class="quick-tags mt-3 d-flex gap-2 flex-wrap">
+  <span class="badge bg-warning text-dark">🍰 Dessert</span>
+  <span class="badge bg-light text-dark">⚡ Easy</span>
+  <span class="badge bg-light text-dark">🔥 Popular</span>
+</div>
+
+</div>
+
+
+    <!-- Content Section -->
+    <div class="col-lg-6">
+
+      <h2 class="recipe-title mb-3">
+        {{ recipe.name || recipe.title }}
+      </h2>
+
+      <!-- Rating -->
+      <div class="rating mb-3">
+        ⭐ {{ recipe.rating }}
+        <span class="text-muted">
+          ({{ recipe.reviewCount }} reviews)
+        </span>
+      </div>
+
+      <!-- Meta Info -->
+      <div class="meta-grid">
+
+        <div class="meta-card">
+          <span>🍝 Cuisine</span>
+          <strong>{{ recipe.cuisine }}</strong>
+        </div>
+
+        <div class="meta-card">
+          <span>🍽 Servings</span>
+          <strong>{{ recipe.servings }}</strong>
+        </div>
+
+        <div class="meta-card">
+          <span>⏱ Prep</span>
+          <strong>{{ recipe.prepTimeMinutes }} mins</strong>
+        </div>
+
+        <div class="meta-card">
+          <span>🔥 Cook</span>
+          <strong>{{ recipe.cookTimeMinutes }} mins</strong>
+        </div>
+
+        <div class="meta-card">
+          <span>⚡ Calories</span>
+          <strong>{{ recipe.caloriesPerServing }} kcal</strong>
+        </div>
+
+        <div class="meta-card">
+          <span>📊 Difficulty</span>
+          <strong>{{ recipe.difficulty }}</strong>
+        </div>
+
+      </div>
+
+      <!-- Tags -->
+      <div class="tags mt-3">
+        @for (tag of recipe.tags; track $index) {
+          <span class="tag">{{ tag }}</span>
+        }
+      </div>
+
+      <!-- Ingredients -->
+      <div class="section-card mt-4">
+        <h5>🧂 Ingredients</h5>
+        <ul class="ingredients-list">
+          @for (item of recipe.ingredients; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Instructions -->
+      <div class="section-card mt-4">
+        <h5>👨‍🍳 Cooking Instructions</h5>
+        <ol class="instruction-list">
+          @for (step of recipe.instructions; track $index) {
+            <li>
+              <span class="step-number">{{ $index + 1 }}</span>
+              <span>{{ step }}</span>
+            </li>
+          }
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+}
+
+<!-- ============================= -->
+<!-- Related Recipes Section -->
+<!-- ============================= -->
+
+@if (relatedRecipes.length > 0) {
+
+<div class="container my-5">
+  <h3 class="mb-4">🍽 You May Also Like</h3>
+
+  <div class="row g-4">
+
+    @for (item of relatedRecipes; track item._id) {
+
+      <div class="col-md-4">
+        <div class="related-card"
+             [routerLink]="['/viewrecipe', item._id]">
+
+          <img
+            [src]="item.image"
+            class="related-img"
+            alt="related recipe"
+          />
+
+          <div class="p-3">
+            <h6 class="mb-1">
+              {{ item.name || item.title }}
+            </h6>
+
+            <small class="text-muted">
+              ⭐ {{ item.rating }} | {{ item.cuisine }}
+            </small>
+          </div>
+
+        </div>
+      </div>
+
+    }
+
+  </div>
+</div>
+
+}

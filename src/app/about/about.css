@@ -1,0 +1,26 @@
+.about-hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.join-section {
+  background: linear-gradient(135deg, #ffb703, #f77f00);
+}

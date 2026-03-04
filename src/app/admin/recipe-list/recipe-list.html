@@ -1,0 +1,64 @@
+<div class="page-layout">
+
+  <app-sidebar></app-sidebar>
+
+  <div class="content-area">
+
+    <div class="container">
+
+      <div class="top-bar">
+        <button class="add-btn" (click)="addRecipe()">
+          Add Recipe
+        </button>
+
+        <input type="text"
+               placeholder="Search Recipe"
+               [(ngModel)]="searchText"
+               (input)="searchRecipe()">
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-responsive">
+
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Cuisine</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (item of recipes | paginate: { itemsPerPage: 5, currentPage: p }; track $index ) {
+                <tr>
+                  <td>{{$index + 1 }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>
+                    <img [src]="item.image">
+                  </td>
+                  <td>{{ item.cuisine }}</td>
+                  <td>
+                    <span class="edit" (click)="editRecipe(item._id)">✏️</span>
+                    <span class="delete" (click)="deleteRecipe(item._id)">🗑️</span>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="pagination-wrapper">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

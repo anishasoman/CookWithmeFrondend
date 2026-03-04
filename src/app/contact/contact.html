@@ -1,0 +1,78 @@
+<!-- HERO HEADER -->
+<section class="contact-hero text-center">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>
+      We’d love to hear from you. Reach out for questions, feedback, or
+      collaborations.
+    </p>
+  </div>
+</section>
+<!-- CONTACT CONTENT -->
+<section class="contact-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- LEFT INFO -->
+      <div class="col-lg-5">
+        <div class="contact-card info-card">
+          <h5>Get In Touch</h5>
+          <p>
+            Have a question or suggestion? Drop us a message and we’ll get back
+            to you soon.
+          </p>
+
+          <div class="contact-info">
+            <p><i class="bi bi-geo-alt"></i> NYC 4567, PO Berlin</p>
+            <p><i class="bi bi-envelope"></i> cookwithme@gmail.com</p>
+            <p><i class="bi bi-telephone"></i> +91 98989 89898</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="col-lg-7">
+        <div class="contact-card form-card">
+          <h5>Client Testimony</h5>
+
+<form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      formControlName="name"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="About"
+      formControlName="about"
+    />
+  </div>
+
+  <div class="mb-3">
+    <textarea
+      rows="4"
+      class="form-control"
+      placeholder="Message"
+      formControlName="message"
+    ></textarea>
+  </div>
+
+  <button class="btn btn-success px-4" type="submit">
+    Submit
+  </button>
+
+</form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+

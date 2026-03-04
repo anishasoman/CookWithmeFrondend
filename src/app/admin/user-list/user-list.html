@@ -1,0 +1,43 @@
+<div class="row m-4 main-layout">
+
+  <div class="col-lg-2 col-md-3 col-12 sidebar-col">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-lg-10 col-md-9 col-12 content-col">
+    <div class="user-container">
+      <h2 class="page-title">All Users List</h2>
+
+      <div class="table-card">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (item of users; track $index) {
+                <tr>
+                  <td>{{ $index + 1 }}</td>
+                  <td>
+                    <img [src]="api.getImageUrl(item.profilePic)"
+                         class="profile-img"
+                         alt="profile" />
+                  </td>
+                  <td class="name">{{ item.username }}</td>
+                  <td class="email">{{ item.email }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

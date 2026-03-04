@@ -1,0 +1,157 @@
+/* Main Layout */
+.main-wrapper {
+  margin: 0 !important;
+}
+
+.sidebar-col {
+  margin-bottom: 20px;
+}
+
+/* Container */
+.request-container {
+  padding: 20px;
+}
+
+/* Title */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #f4b400;
+}
+
+/* Card */
+.table-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* Table Responsive */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  min-width: 750px; /* allows scroll on mobile */
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 2px solid #eee;
+}
+
+th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+td {
+  padding: 16px 14px;
+  vertical-align: middle;
+}
+
+/* Alternate rows */
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Message column wrap */
+.message-cell {
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+/* Name */
+.name {
+  font-weight: 500;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Buttons Style */
+.approve-btn {
+  background: #e6f4ea;
+  color: #1e8e3e;
+  border: 1px solid #1e8e3e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.approve-btn:hover {
+  background: #1e8e3e;
+  color: white;
+}
+
+.reject-btn {
+  background: #fdecea;
+  color: #d93025;
+  border: 1px solid #d93025;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reject-btn:hover {
+  background: #d93025;
+  color: white;
+}
+
+/* Status Badge */
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.approved {
+  background: #1e8e3e;
+  color: white;
+}
+
+.rejected {
+  background: #d93025;
+  color: white;
+}
+
+@media (max-width: 992px) {
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .table-card {
+    padding: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    width: 100%;
+  }
+
+}

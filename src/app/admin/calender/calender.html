@@ -1,0 +1,14 @@
+<div class="calendar-wrapper">
+  <mat-card class="calendar-card">
+
+    <h3 class="calendar-title">Select a Date</h3>
+
+    <mat-calendar [(selected)]="selected"></mat-calendar>
+
+    <div class="selected-date" *ngIf="selected()">
+      Selected date:
+      <strong>{{ selected() | date: 'fullDate' }}</strong>
+    </div>
+
+  </mat-card>
+</div>
